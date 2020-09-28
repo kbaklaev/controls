@@ -1,9 +1,17 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React, { useEffect } from 'react';
+import { Field, reduxForm, InjectedFormProps } from 'redux-form';
 
 import './input.scss';
 
-const Input: React.FC = () => {
+interface InputProps {
+  method: string;
+}
+
+const Input: React.FC<InputProps & InjectedFormProps<{}, InputProps>> = ({ method }) => {
+  useEffect(() => {
+    console.log(method);
+  }, [method]);
+
   return (
     <div className="salary-input">
       <Field name="salary" component="input" type="text" className="input" />
@@ -12,6 +20,6 @@ const Input: React.FC = () => {
   );
 };
 
-export default reduxForm({
-  form: 'controls'
-})(Input)
+export default reduxForm<{}, InputProps>({
+  form: 'controls',
+})(Input);

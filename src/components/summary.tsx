@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import './summary.scss'
+import './summary.scss';
 
 const NDFL_AMOUNT = 13;
 
