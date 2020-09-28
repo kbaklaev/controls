@@ -1,0 +1,28 @@
+.selector {
+  font-weight: bold;
+
+  span {
+    font-size: smaller;;
+  }
+}
+
+.btncircle {
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  margin-right: 25em;
+  margin-top: 5px;
+  font-size: 10px;
+  background-color: transparent;
+  color: black;
+  border-color: gray;
+  outline: none;
+  font-weight: bold;
+
+  &:hover {
+    color: #5e6cab;
+  }
+}

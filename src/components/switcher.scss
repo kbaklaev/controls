@@ -1,0 +1,28 @@
+.switcher {
+  display: flex;
+  flex-direction: row;
+  label {
+    font-weight: bold;
+    font-size: smaller;
+  }
+}
+
+.with-ndfl {
+  padding-left: 3em;
+}
+
+.with-ndfl:before {
+  background-color: lightgray;
+  margin-left: 3em;
+}
+
+.with-ndfl:after {
+  margin-left: 3em;
+}
+
+.custom-switch .custom-control-input:checked~.custom-control-label::before{
+  background-color:#f6a140;
+  border-color: #f6a140;
+  border-color: #f6a140;
+  box-shadow: none;
+}

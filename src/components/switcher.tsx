@@ -1,18 +1,24 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React from "react";
+import { Field, reduxForm } from "redux-form";
+
+import "./switcher.scss";
 
 let Switcher: React.FC = () => {
   return (
     <div>
-      <div className="custom-control custom-switch">
+      <div className="custom-control custom-switch switcher">
+        <label htmlFor="customSwitch">Указать с НДФЛ</label>
         <Field
-          name="w/oNdfl"
+          name="withoutTax"
           component="input"
           type="checkbox"
           className="custom-control-input"
-          id="customSwitch1"
+          id="customSwitch"
         />
-        <label className="custom-control-label" htmlFor="customSwitch1">
+        <label
+          className="custom-control-label with-ndfl"
+          htmlFor="customSwitch"
+        >
           Без НДФЛ
         </label>
       </div>
@@ -21,5 +27,5 @@ let Switcher: React.FC = () => {
 };
 
 export default reduxForm({
-  form: 'controls',
+  form: "controls",
 })(Switcher);
