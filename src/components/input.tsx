@@ -1,19 +1,22 @@
-import React from "react";
-import { Field, reduxForm, InjectedFormProps } from "redux-form";
+import React from 'react';
+import { Field, reduxForm, InjectedFormProps } from 'redux-form';
 
-import "./input.scss";
+import './input.scss';
 
 interface InputProps {
   method: string;
 }
 
-const Input: React.FC<InputProps & InjectedFormProps<{}, InputProps>> = ({
-  method,
-}) => {
-  // const normalizeSalaryFormat = (input: string) => {
-  //   if (!input) return;
-  //   return input.replace(/ /g, "").replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  // };
+const Input: React.FC<InputProps & InjectedFormProps<{}, InputProps>> = ({ method }) => {
+  const formatSalaryFormat = (input: string) => {
+    if (!input) return;
+    return input.replace(/ /g, "").replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
+  const normalizeSalaryFormat = (input: string) => {
+    if (!input) return;
+    return input.replace(/ /g, "");
+  };
 
   return (
     <div className="salary-input">
@@ -22,17 +25,17 @@ const Input: React.FC<InputProps & InjectedFormProps<{}, InputProps>> = ({
         component="input"
         type="text"
         className="input"
-        // normalize={normalizeSalaryFormat}
+        format={formatSalaryFormat}
+        normalize={normalizeSalaryFormat}        
       />
-      <label>
-        {" "}
-        &#8381;{" "}
-        {method === "day" ? "в день" : method === "hour" ? "в час" : null}
+      <label className="font-weight-bold">
+        {' '}
+        &#8381; {method === 'day' ? 'в день' : method === 'hour' ? 'в час' : null}
       </label>
     </div>
   );
 };
 
 export default reduxForm<{}, InputProps>({
-  form: "controls",
+  form: 'controls',
 })(Input);

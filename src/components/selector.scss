@@ -1,5 +1,6 @@
 .selector {
   font-weight: bold;
+  padding-bottom: 1em;
 
   span {
     font-size: smaller;;
@@ -26,3 +27,9 @@
     color: #5e6cab;
   }
 }
+
+// .custom-control-input:checked ~ .custom-control-label::before {
+//   border-color: #5e6cab;
+//   background-color: #5e6cab;
+//   box-shadow: none !important;
+// }

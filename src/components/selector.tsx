@@ -33,7 +33,6 @@ interface SelectorProps {
   initialValues: {
     method: string;
     withoutTax: boolean;
-    salary: number;
   };
 }
 
@@ -46,7 +45,7 @@ let Selector: React.FC<SelectorProps & InjectedFormProps<{}, SelectorProps>> = (
 
   return (
     <div className="selector">
-      <span className="text-black-50">Сумма</span>
+      <span className="text-secondary">Сумма</span>
       <section id="radio-buttons d-flex flex-column">
         {methods.map((method) => (
           <div key={method.id} className="d-flex justify-content-start">
@@ -54,7 +53,7 @@ let Selector: React.FC<SelectorProps & InjectedFormProps<{}, SelectorProps>> = (
               <Field name="method" component="input" type="radio" value={method.value} />
               {` ${method.label}`}
             </label>
-            <div onClick={handleClick}>
+            <div>
               {method.value === 'mrot' && (
                 <div className="btncircle" onClick={handleClick}>
                   <Tooltip

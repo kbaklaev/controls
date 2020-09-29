@@ -15,6 +15,7 @@ const Summary: React.FC<SummaryProps> = ({ salary, taxState }) => {
 
   // set tax
   useEffect(() => {
+    console.log(salary)
     if (salary) {
       !taxState
         ? setTax(Math.round((salary / 100) * NDFL_AMOUNT))
